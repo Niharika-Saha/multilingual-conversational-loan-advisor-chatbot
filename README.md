@@ -3,12 +3,13 @@ Our AI-driven Loan Advisor Chatbot simplifies the loan application process and e
 
 
 Key features:-     
-WhatsApp Accessibility via Twilio API, eliminating the need for extra apps
-Multilingual Support powered by Sarvam AI for seamless interactions
-Smart AI Integration using Google Gemini API for personalized responses
-Tool Calling for Intent Detection: No hardcoded intent; AI dynamically selects the appropriate tool/service
-Stand out features: EMI calculator, affordability scrutinizer, and loan eligibility checker
-Scalable: PostgreSQL and AWS deployment
+WhatsApp Accessibility via Twilio API, eliminating the need for extra apps     
+Multilingual Support powered by Sarvam AI for seamless interactions     
+Smart AI Integration using Google Gemini API for personalized responses     
+Tool Calling for Intent Detection: No hardcoded intent; AI dynamically selects the appropriate tool/service      
+Stand out features: EMI calculator, affordability scrutinizer, and loan eligibility checker     
+Scalable: PostgreSQL and AWS deployment    
+
 This chatbot makes loan processes transparent, interactive, and accessible, empowering users with smarter financial decisions
 
 

@@ -1,8 +1,12 @@
 # multilingual-conversational-loan-advisor-chatbot
-Our Loan Advisor Chatbot is an AI-powered solution designed to streamline the loan application process and enhance financial literacy. It leverages conversational AI, natural language processing (NLP), and machine learning to assess loan eligibility, provide step-by-step guidance, and offer real-time financial insights.
-
-By integrating with external APIs, the chatbot ensures instant verification for personal, home, and business loans.
-
-A key differentiator of this chatbot is its accessibility via WhatsApp through the Twilio API, eliminating the need for additional apps. Its intelligent, multilingual support powered by Google Gemini API and Sarvam AI ensures seamless interactions across diverse user groups. Dialogflow and Langchain dynamically detect user intent and manage AI-driven workflows, making responses more relevant and personalized.
+Our AI-driven Loan Advisor Chatbot simplifies the loan application process and enhances financial literacy using conversational AI, NLP, and database management. It assesses loan eligibility, provides step-by-step guidance, and offers real-time financial insights by integrating with external APIs for instant verification of personal, home, and business loans.
+Key features:-
+WhatsApp Accessibility via Twilio API, eliminating the need for extra apps
+Multilingual Support powered by Sarvam AI for seamless interactions
+Smart AI Integration using Google Gemini API for personalized responses
+Tool Calling for Intent Detection: No hardcoded intent; AI dynamically selects the appropriate tool/service
+Stand out features: EMI calculator, affordability scrutinizer, and loan eligibility checker
+Scalable: PostgreSQL and AWS deployment
+This chatbot makes loan processes transparent, interactive, and accessible, empowering users with smarter financial decisions
 
 

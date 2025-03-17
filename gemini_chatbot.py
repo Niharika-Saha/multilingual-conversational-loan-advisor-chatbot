@@ -3,7 +3,6 @@ import os
 from db_connector import fetch_similar_loans  # Import PostgreSQL function
 
 #  Configure Gemini AI
-API_KEY = "AIzaSyDZrPNSczF0Gi22-8gwCEslhqHDMJ0dLXQ"
 genai.configure(api_key=API_KEY)
 
 def check_loan_eligibility(income, expenses, cibil_score):

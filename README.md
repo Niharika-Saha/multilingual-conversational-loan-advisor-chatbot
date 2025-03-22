@@ -116,7 +116,7 @@ multilingual-conversational-loan-advisor-chatbot/
 │-- app.py         # Main script for chatbot interactions
 │-- test_sarvam_api.py # Handles Sarvam API interactions (speech-to-text, text translation, etc.)
 │-- gemini_chatbot.py  # Contains Google Gemini API prompts and logic handling
-│-- database.py        # Database connection logic
+│-- db_connector.py        # Database connection logic
 │-- requirements.txt   # Python dependencies
 │-- .env               # Environment variables (ignored in Git)
 │-- loan_approval_dataset.csv # Sample dataset for testing

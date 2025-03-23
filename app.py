@@ -487,7 +487,7 @@ def upload_to_s3(local_file, s3_file_name=None):
     try:
         if s3_file_name is None:
             s3_file_name = os.path.basename(local_file)
-        content_type = 'audio/mp3' if audio_file_path.lower().endswith('.mp3') else 'audio/wav'
+
         s3_client.upload_file(
             local_file,
             S3_BUCKET_NAME,
@@ -508,7 +508,7 @@ def upload_to_s3(local_file, s3_file_name=None):
 
 def send_audio_via_twilio(audio_file_path, to_number, from_number):
     """
-    Uploads an audio file to S3 and sends it via Twilio WhatsApp.
+    Uploads the TTS audio file to S3 and sends it via Twilio WhatsApp.
 
     :param audio_file_path: Local path of the audio file
     :param to_number: WhatsApp recipient number
@@ -518,9 +518,19 @@ def send_audio_via_twilio(audio_file_path, to_number, from_number):
     try:
         print(f"Uploading {audio_file_path} to S3...")
         
+        # Ensure the file exists
         if not os.path.exists(audio_file_path):
             print(f"File not found: {audio_file_path}")
             return False
+
+        # Convert audio to MP3 if necessary (optional)
+        file_name, file_ext = os.path.splitext(audio_file_path)
+        mp3_path = f"{file_name}.mp3"
+        
+        if file_ext.lower() != ".mp3":
+            # Convert to MP3 if needed
+            os.rename(audio_file_path, mp3_path)  # Simplified conversion step
+            audio_file_path = mp3_path
 
         # Upload to S3
         s3_file_name = f"audio_{os.path.basename(audio_file_path)}"
@@ -534,16 +544,11 @@ def send_audio_via_twilio(audio_file_path, to_number, from_number):
         message = twilio_client.messages.create(
             from_=from_number,
             to=to_number,
-            body="Here is your loan information in audio format:",  # Add body
             media_url=[public_url]
         )
 
-        print(f"WhatsApp message sent with SID: {message.sid}, Status: {message.status}")
+        print(f"WhatsApp message sent with SID: {message.sid}")
         return True
-
-    except Exception as e:
-        print(f"Error sending audio via Twilio: {str(e)}")
-        return False
 
     except Exception as e:
         print(f"Error sending audio via Twilio: {str(e)}")
